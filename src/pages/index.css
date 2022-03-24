@@ -1,0 +1,19 @@
+.background {
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+	height: 100%;
+  z-index: -1;
+}
+	
+.hidden-h1 {
+	visibility: hidden;
+	position: absolute;
+}
+
+blockquote h1 {
+	font-size: var(--h3);
+	border-bottom: var(--line);
+}
+	
+	

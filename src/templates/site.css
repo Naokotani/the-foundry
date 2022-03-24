@@ -1,0 +1,15 @@
+.site-layout {
+	width: 100%;
+	min-height: 500px;
+}
+
+.site-layout .card {
+	float: right;
+	width: 40%;
+}
+
+.site-layout p {
+	max-width: 100%;
+}
+
+	

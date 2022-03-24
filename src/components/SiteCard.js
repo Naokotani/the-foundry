@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Figure from '../components/Figure';
-import './siteCard.css';
 import { Link } from 'gatsby';
 
 const SiteCard = ({ site }) => {

@@ -5,6 +5,7 @@ import serializers from "../components/serializers";
 import Layout from '../components/Layout';
 import SiteCard from '../components/SiteCard'
 import './index.css';
+import '../components/siteCard.css';
 
 const HomePage = ({ data }) => {
 

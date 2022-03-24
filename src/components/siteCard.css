@@ -25,7 +25,3 @@
   grid-auto-rows: minmax(20px, auto);
   justify-content: center;	
 }
-
-.site-card:hover {
-	box-shadow: var(--cardShadow);
-}

@@ -14,12 +14,12 @@
     --red: #ff0003;
     --yellow: #fde24f;
     --white: #fff;
+		--purple: #701660;
 
 		--lightGrey: #bfbfbf;
 		--grey: #404040;
 		--darkGrey: #141414;
 		--black: #121212;
-
 
 
     /*define colour intentions*/
@@ -29,6 +29,7 @@
     --background: var(--white);
     --textColor: var(--black);
     --lineColor: var(--grey);
+		--linkColor: var(--purple);
 
     --cardBg: var(--darkGrey);
 		--cardText: var(--white);
@@ -71,7 +72,7 @@
     --containerPadding: 2.5%;
     --headerHeight: 5rem;
     --borderRadius: 5px;
-		--footerHeight: 9rem;
+		--footerHeight: 3rem;
 		--headerFooterHeight: calc(var(--headerHeight) + var(--footerHeight));
 }
 
@@ -157,13 +158,14 @@ footer a {
     text-decoration: none;
     color: var(--footerTextColor);
 }
+
 footer a + a {
     margin-left: 5px;
 }
 footer p {
-    margin-bottom: none;
     max-width: 0;
 }
+
 p {
     margin-bottom: 1rem;
     max-width: 40em;
@@ -171,9 +173,9 @@ p {
 
 p a,
 blockquote a {
-    color: var(--darkGreyBlue);
+    color: var(--linkColor);
     text-decoration: none;
-    border-bottom: solid 2px var(--orange);
+    border-bottom: solid 2px var(--linkColor);
 }
 
 h1, h2, h3, h4, h5 {
@@ -377,7 +379,7 @@ button.plain:hover {
 }
 
 .card-transparent {
-	background: rgba(20,20,20,0.7);
+	background: rgba(20,20,20,0.8);
 	transition: background 200ms;
 	transition: box-shadow 200ms;
 	box-shadow: 2px 2px 2px rgba(0,0,0,0.5);

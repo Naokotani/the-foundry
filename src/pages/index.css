@@ -15,5 +15,9 @@ blockquote h1 {
 	font-size: var(--h3);
 	border-bottom: var(--line);
 }
+
+.intro-quote {
+	margin-bottom: 3rem;
+}	
 	
 	

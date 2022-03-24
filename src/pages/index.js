@@ -15,27 +15,27 @@ const HomePage = ({ data }) => {
 	return (
 		<Layout>
 			<h1 className="hidden-h1">The Foundry</h1>
-			<article className="flex flex-around">
+			<section className="flex flex-around intro-quote">
 				<blockquote>
 				<h1>{home.subTitle}</h1>
 					<BlockContent
 						blocks={home._rawBody}
 						serializers={serializers} />
 				</blockquote>
-				<article className="card card-transparent-stable">
+				<aside className="card card-transparent-stable">
 					<h3>Skillset</h3>
 					<ul>
 						{home.highlights.map((highlight) => (
 							<li>{highlight}</li>
 						))}
 					</ul>
-				</article>
-			</article>
-			<article className="site-card">
+				</aside>
+			</section>
+			<section className="site-card">
 				{home.sites.map((site) => (
 					<SiteCard site={site} />
 				))}
-			</article>
+			</section>
 		</Layout>
 	);
 };

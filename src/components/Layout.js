@@ -6,7 +6,7 @@ import "./layout/layout.css";
 
 export default function Layout({ children }) {
 
-const data = useStaticQuery(graphql`
+	const data = useStaticQuery(graphql`
 query {
   sanityHome {
 		subTitle
@@ -19,24 +19,25 @@ query {
 }
   `);
 
-  return (
-    <article>
-			<Figure
-				className="background"
-				id={data.sanityHome.mainImage.asset._id} />
-      <header className="nav flex flex-around">
-        <Link to="/">
+	return (
+		<article>
+			<div className="background">
+				<Figure
+					id={data.sanityHome.mainImage.asset._id} />
+			</div>
+			<header className="nav flex flex-around">
+				<Link to="/">
 					<h1 className="site-logo">The Foundry</h1>
-        </Link>
-      </header>
-      <main className="layout">
+				</Link>
+			</header>
+			<main className="layout">
 				{children}
 			</main>
-      <footer>
-        <nav>
-          <Link to="/">Home</Link>
-        </nav>
-      </footer>
-    </article>
-  );
+			<footer>
+				<nav>
+					<Link to="/">Home</Link>
+				</nav>
+			</footer>
+		</article>
+	);
 }

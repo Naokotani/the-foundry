@@ -371,6 +371,23 @@ button.plain:hover {
 		--primary: var(--darkBlue);
 }
 
+.card-transparent-stable {
+	background: rgba(20,20,20,0.9);
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+.card-transparent {
+	background: rgba(20,20,20,0.7);
+	transition: background 200ms;
+	transition: box-shadow 200ms;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+.card-transparent:hover {
+	background: rgba(20,20,20,0.9);
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
+
 .card a {
 	color: var(--white);
 }

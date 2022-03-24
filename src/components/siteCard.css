@@ -26,10 +26,6 @@
   justify-content: center;	
 }
 
-.site-card {
-	transition: var(--cardTransition);
-}
-
 .site-card:hover {
 	box-shadow: var(--cardShadow);
 }

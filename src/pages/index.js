@@ -21,7 +21,7 @@ const HomePage = ({ data }) => {
 						blocks={home._rawBody}
 						serializers={serializers} />
 				</blockquote>
-				<article className="card">
+				<article className="card card-transparent-stable">
 					<h3>Skillset</h3>
 					<ul>
 						{home.highlights.map((highlight) => (

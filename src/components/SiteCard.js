@@ -9,7 +9,7 @@ const SiteCard = ({ site }) => {
 
 	return (
 		<Link to={`/${site.slug.current}`}>
-			<article className="card">
+			<article className="card card-transparent">
 				<h3>{site.title}</h3>
 				<Figure id={site.mainImage.asset._id} />
 			</article>

@@ -20,7 +20,7 @@ query {
   `);
 
   return (
-    <div>
+    <article>
 			<Figure
 				className="background"
 				id={data.sanityHome.mainImage.asset._id} />
@@ -37,6 +37,6 @@ query {
           <Link to="/">Home</Link>
         </nav>
       </footer>
-    </div>
+    </article>
   );
 }

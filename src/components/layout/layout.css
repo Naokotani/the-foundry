@@ -26,7 +26,7 @@
 
     --primary: var(--grey);
     --danger: var(--red);
-    --background: var(--white);
+    --background: var(--grey);
     --textColor: var(--black);
     --lineColor: var(--grey);
 		--linkColor: var(--purple);
@@ -70,9 +70,9 @@
 
     /* Positioning */
     --containerPadding: 2.5%;
-    --headerHeight: 5rem;
+    --headerHeight: 4rem;
     --borderRadius: 5px;
-		--footerHeight: 3rem;
+		--footerHeight: 5rem;
 		--headerFooterHeight: calc(var(--headerHeight) + var(--footerHeight));
 }
 
@@ -105,15 +105,22 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: var(--headerBackground);
     color: var(--white);
     height: var(--headerHeight);
-    box-shadow: var(--level-2);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 var(--containerPadding);
 		z-index: 10;
+}
+
+.scroll-down {
+	background: var(--navColor);
+  box-shadow: var(--level-2);
+}	
+
+.scroll-top {
+	background: none;
 }
 
 a {
@@ -149,7 +156,7 @@ footer {
     --footerTextColor: var(--footerText);
     color: var(--footerTextColor);
     background: var(--footerColor);
-    padding: 2rem var(--containerPadding);
+    padding: 0 var(--containerPadding);
     text-align: center;
 		height: var(--footerHeight);
 }

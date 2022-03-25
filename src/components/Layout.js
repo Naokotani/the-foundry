@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import Figure from './Figure'
 import "./layout/normalize.css";
@@ -9,8 +9,12 @@ export default function Layout({ children }) {
 	const data = useStaticQuery(graphql`
 query {
   sanityHome {
-		subTitle
-    mainImage {
+    background {
+      asset {
+        _id
+      }
+    }
+    highResBackground {
       asset {
         _id
       }
@@ -19,13 +23,58 @@ query {
 }
   `);
 
+	const [scroll, setScroll] = useState(false);
+	const [highRes, setHighRes] = useState(false);
+	const [small, setSmall] = useState(false);
+
+	const handleScroll = () => {
+		if (window.scrollY >= 50) {
+			setScroll(true);
+		} else {
+			setScroll(false);
+		}
+	}
+
+	const handleResize = () => {
+		if (window.innerWidth >= 1921) {
+			setHighRes(true);
+		} else {
+			setHighRes(false);
+		}
+
+		if (window.innerWidth < 768) {
+			setSmall(true);
+		} else {
+			setSmall(false);
+		}
+
+	}
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	useEffect(() => {
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
 	return (
 		<aside>
+			{!small&&
 			<div className="background">
 				<Figure
-					id={data.sanityHome.mainImage.asset._id} />
+					id={highRes ? data.sanityHome.highResBackground.asset._id :
+						data.sanityHome.background.asset._id
+					} />
 			</div>
-			<header className="nav flex flex-around">
+			}
+			<header
+				className={scroll ?
+					'nav flex flex-around scroll-down' :
+					'nav flex flex-around scroll-top'
+				}>
 				<Link to="/">
 					<h1 className="site-logo">The Foundry</h1>
 				</Link>
@@ -36,6 +85,9 @@ query {
 			<footer>
 				<nav>
 					<Link to="/">Home</Link>
+					<Link to="/contact">Contact</Link>
+					<br/>
+					<small>&copy; 2022 The Foundry</small>
 				</nav>
 			</footer>
 		</aside>

@@ -7,7 +7,7 @@ const Figure = ({ node, id, className="", alt="" }) => {
 
   const sanityConfig = { projectId: "bk2ka50u", dataset: "production" };
 
-  const image = getGatsbyImageData(imageRef, { maxWidth: 1024 }, sanityConfig);
+	const image = getGatsbyImageData(imageRef, { maxWidth: 1024 }, sanityConfig);
 
   return (
     <figure>

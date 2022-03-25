@@ -19,5 +19,31 @@ blockquote h1 {
 .intro-quote {
 	margin-bottom: 3rem;
 }	
-	
-	
+
+.intro-quote p {
+	max-width: 800px;
+}
+
+.intro-quote a p {
+	margin-bottom: 0;
+}
+
+.highlights {
+	padding: 2em;
+}
+
+.highlights ul, h3 {
+	width: 200px;
+}
+
+.highlights h3 {
+	border-bottom: solid 1px var(--cardText);
+}
+
+.intro {
+	gap: 36px;
+}
+
+.intro blockquote a+a {
+	margin-left: 1rem;
+}	

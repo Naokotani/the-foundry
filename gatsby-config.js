@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `new`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `The Foundry`,
+    siteUrl: `https://profile.chrisfoundry.com`
   },
   plugins: [
 		"gatsby-plugin-image",

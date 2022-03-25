@@ -1,5 +1,5 @@
-import * as React from "react";
-import { graphql } from "gatsby";
+import React, { useEffect, useState } from "react";
+import { graphql, Link } from "gatsby";
 import BlockContent from "@sanity/block-content-to-react";
 import serializers from "../components/serializers";
 import Layout from '../components/Layout';
@@ -7,29 +7,59 @@ import SiteCard from '../components/SiteCard'
 import './index.css';
 import '../components/siteCard.css';
 
+
 const HomePage = ({ data }) => {
 
 	const home = data.allSanityHome.edges[0].node;
-	console.log(data);
+
+	const [highlights, setHighlights] = useState(true);
+
+	const handleResize = () => {
+		if (window.innerWidth >= 1000) {
+			setHighlights(true);
+		} else {
+			setHighlights(false);
+		}
+	}
+
+	useEffect(() => {
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
 
 	return (
 		<Layout>
 			<h1 className="hidden-h1">The Foundry</h1>
 			<section className="flex flex-around intro-quote">
-				<blockquote>
-				<h1>{home.subTitle}</h1>
-					<BlockContent
-						blocks={home._rawBody}
-						serializers={serializers} />
-				</blockquote>
-				<aside className="card card-transparent-stable">
-					<h3>Skillset</h3>
-					<ul>
-						{home.highlights.map((highlight) => (
-							<li>{highlight}</li>
-						))}
-					</ul>
-				</aside>
+				<div className="flex intro">
+					<blockquote>
+						<h1>{home.subTitle}</h1>
+						<BlockContent
+							blocks={home._rawBody}
+							serializers={serializers} />
+						<nav>
+							<Link to="/contact">
+								Contact
+							</Link>
+							<a href="https://github.com/naokotani">
+								Github
+							</a>
+							<a href="linkedin">
+								LinkedIn
+							</a>
+						</nav>
+					</blockquote>
+					{highlights &&
+						<aside className="card card-transparent-stable highlights">
+							<h3>Skillset</h3>
+							<ul>
+								{home.highlights.map((highlight) => (
+									<li>{highlight}</li>
+								))}
+							</ul>
+						</aside>
+					}
+				</div>
 			</section>
 			<section className="site-card">
 				{home.sites.map((site) => (
@@ -59,11 +89,6 @@ query {
 					}
           url
           title
-        }
-        mainImage {
-          asset {
-            _id
-          }
         }
         _rawBody
         highlights

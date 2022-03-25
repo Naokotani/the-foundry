@@ -15,13 +15,18 @@
 }
 
 .site-card {
-  max-width: 1660px;
+  max-width: 1220px;
   margin: 0 auto;
   display: grid;
   grid-gap: 10px;
   /* fit as many columns as possible, 180px wide each: */
-  grid-template-columns: repeat(auto-fill, 400px);
+  grid-template-columns: repeat(auto-fill, 300px);
   /* each row is 20px high -- we always span 2+ */
   grid-auto-rows: minmax(20px, auto);
   justify-content: center;	
+}
+@media only screen and (min-width: 500px) {
+		.site-card {
+				grid-template-columns: repeat(auto-fill, 400px);
+		}
 }

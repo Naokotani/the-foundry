@@ -1,0 +1,21 @@
+.contact-profile figure {
+	max-width: 800px;
+}
+
+.contact ul {
+	list-style: none;
+	margin-top: 0;
+	padding: 0;
+}
+
+.contact li {
+	margin-bottom: 1rem;
+}
+
+.contact a:hover {
+	text-decoration: underline;
+}	
+
+.contact-layout {
+	margin-top: 1rem;
+}

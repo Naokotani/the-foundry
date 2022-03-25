@@ -18,10 +18,10 @@ const HomePage = ({ data }) => {
 					<p>Phone: {contact.phone}</p>
 					<ul>
 						<li>
-							<a href={contact.linkIn}>LinkedIn</a>
+							<a href={`https://${contact.linkIn}`}>LinkedIn</a>
 						</li>
 						<li>
-							<a href={contact.Github}>Github</a>
+							<a href={`https://${contact.Github}`}>Github</a>
 						</li>
 					</ul>
 				<figure className="contact-profile">

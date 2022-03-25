@@ -11,6 +11,7 @@ import '../components/siteCard.css';
 const HomePage = ({ data }) => {
 
 	const home = data.allSanityHome.edges[0].node;
+	const contact = data.sanityContact
 
 	const [highlights, setHighlights] = useState(true);
 
@@ -23,6 +24,7 @@ const HomePage = ({ data }) => {
 	}
 
 	useEffect(() => {
+		handleResize()
 		window.addEventListener("resize", handleResize);
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
@@ -41,12 +43,8 @@ const HomePage = ({ data }) => {
 							<Link to="/contact">
 								Contact
 							</Link>
-							<a href="https://github.com/naokotani">
-								Github
-							</a>
-							<a href="linkedin">
-								LinkedIn
-							</a>
+							<a href={`https://${contact.linkIn}`}>LinkedIn</a>
+							<a href={`https://${contact.Github}`}>Github</a>
 						</nav>
 					</blockquote>
 					{highlights &&
@@ -94,6 +92,10 @@ query {
         highlights
       }
     }
+  }
+  sanityContact {
+    linkIn
+    Github
   }
 }
 `;

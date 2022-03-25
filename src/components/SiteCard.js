@@ -4,8 +4,6 @@ import { Link } from 'gatsby';
 
 const SiteCard = ({ site }) => {
 
-	console.log(site);
-
 	return (
 		<Link to={`/${site.slug.current}`}>
 			<article className="card card-transparent">

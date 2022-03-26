@@ -3,9 +3,10 @@
 	min-height: 500px;
 }
 
-.site-layout .card {
+.site-layout .site-image {
 	float: right;
 	width: 40%;
+	margin: 0 0 0 1rem;
 }
 
 .site-layout p {
@@ -16,5 +17,9 @@
 	max-width: 1200px;
 	margin: auto;
 	margin-bottom: 3rem;
+}
+
+.site-image {
+	width: 400px;
 }
 	

@@ -38,7 +38,7 @@ query {
 				<blockquote className="site-blockquote">
 					<h1>{site.title}</h1>
 					<div className="site-layout">
-						<div className="card">
+						<div className="site-image">
 							<a href={site.url}>
 								<Figure id={site.mainImage.asset._id} />
 							</a>

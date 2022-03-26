@@ -19,6 +19,11 @@ query {
         _id
       }
     }
+    cellBackground {
+      asset {
+        _id
+      }
+    }
   }
 }
   `);
@@ -36,6 +41,7 @@ query {
 	}
 
 	const handleResize = () => {
+		console.log(small)
 		if (window.innerWidth >= 1921) {
 			setHighRes(true);
 		} else {
@@ -47,7 +53,6 @@ query {
 		} else {
 			setSmall(false);
 		}
-
 	}
 
 	useEffect(() => {
@@ -64,12 +69,16 @@ query {
 
 	return (
 		<aside>
-			{!small&&
+			{!small?
 			<div className="background">
 				<Figure
 					id={highRes ? data.sanityHome.highResBackground.asset._id :
 						data.sanityHome.background.asset._id
 					} />
+			</div>:
+			<div className="background">
+				<Figure
+					id={data.sanityHome.cellBackground.asset._id} />
 			</div>
 			}
 			<header

@@ -34,15 +34,13 @@ query {
 }
   `);
 
-	const thing = true;
-
 	return (
 		<Layout>
 			<blockquote className="site-blockquote">
 				<h1>{site.title}</h1>
 				<div className="site-layout">
 					<div className="site-image">
-						<a href={site.url}>
+						<a href={`http://${site.url}`}>
 							<Figure id={site.mainImage.asset._id} />
 						</a>
 					</div>

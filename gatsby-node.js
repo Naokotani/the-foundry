@@ -20,6 +20,7 @@ query {
           }
         }
         _rawBody
+				_id
       }
     }
   }

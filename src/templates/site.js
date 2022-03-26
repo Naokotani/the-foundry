@@ -1,5 +1,5 @@
 import React from "react"
-import {graphql, useStaticQuery} from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import Figure from '../components/Figure';
 import Layout from "../components/Layout"
 import BlockContent from "@sanity/block-content-to-react";
@@ -27,31 +27,37 @@ query {
         }
         title
         url
+				_id
       }
     }
   }
 }
   `);
 
+	const thing = true;
+
 	return (
 		<Layout>
-				<blockquote className="site-blockquote">
-					<h1>{site.title}</h1>
-					<div className="site-layout">
-						<div className="site-image">
-							<a href={site.url}>
-								<Figure id={site.mainImage.asset._id} />
-							</a>
-						</div>
-						<BlockContent
-							blocks={site._rawBody}
-							serializers={serializers} />
+			<blockquote className="site-blockquote">
+				<h1>{site.title}</h1>
+				<div className="site-layout">
+					<div className="site-image">
+						<a href={site.url}>
+							<Figure id={site.mainImage.asset._id} />
+						</a>
 					</div>
-				</blockquote>
+					<BlockContent
+						blocks={site._rawBody}
+						serializers={serializers} />
+				</div>
+			</blockquote>
 			<section className="site-card">
-				{data.allSanitySite.edges.map((site) => (
-					<SiteCard site={site.node} />
-				))}
+				{data.allSanitySite.edges.map((s) => {
+					return (
+						s.node._id !== site._id &&
+						<SiteCard site={s.node} />
+					)
+				})}
 			</section>
 		</Layout>
 	)

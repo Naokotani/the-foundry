@@ -41,7 +41,6 @@ query {
 	}
 
 	const handleResize = () => {
-		console.log(small)
 		if (window.innerWidth >= 1921) {
 			setHighRes(true);
 		} else {

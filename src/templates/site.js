@@ -40,7 +40,7 @@ query {
 				<h1>{site.title}</h1>
 				<div className="site-layout">
 					<div className="site-image">
-						<a href={`http://${site.url}`}>
+						<a href={`https://${site.url}`}>
 							<Figure id={site.mainImage.asset._id} />
 						</a>
 					</div>
